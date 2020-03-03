@@ -24,15 +24,15 @@
 		<div class="wrapper">
 			<form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 				<fieldset>
-				 <legend>Zet hier jouw naam + klas</legend>
-				 <input type = "text" name = "input1"  placeholder = "string 1"><br>
-				 <input type = "text" name = "input2"   placeholder = " string 2">
+				 <legend>Milan Ligtermoet - GD1B</legend>
+				 <input type = "text" name = "input1"  placeholder = "string 1" value="<?php if(isset($_GET['input1'])){echo htmlentities($_GET['input1']);}?>"><br>
+				 <input type = "text" name = "input2"   placeholder = " string 2" value="<?php if(isset($_GET['input2'])){echo htmlentities($_GET['input2']);}?>">
 				 <input type = "submit"  id = "submit" name = "submit" value = "submit">
 			 </fieldset>
 			</form>
 			<hr>
 			<?php
-					// "schrijf hier de benodigde code"
+
 			?><ul>
 					<li class="showSpaces">Ingevoerde string 1:  <?php  echo $input1;  ?> </li>
 					<li class="showSpaces">Ingevoerde string 2:  <?php  echo $input2;  ?> </li>
@@ -57,6 +57,7 @@
 					<li>Wijzig alle letters van string 1 naar hoofdletter:  <?php echo strtoupper ($input1); ?> </li>
 					<li>Wijzig alle letters van string 2 naar hoofdletter:  <?php echo strtoupper ($input2); ?> </li>
 					<li>Wijzig alle letters van string 3 naar hoofdletter:  <?php echo strtoupper ($input1.$input2); ?> </li>
+					<li>is String 1 een geldige email?  <?php if (filter_var($input1, FILTER_VALIDATE_EMAIL)) {echo ("Geldig");} else {echo ("Ongeldig");} ?> </li>
 				</ul>
 				<hr>
 				<ol>
